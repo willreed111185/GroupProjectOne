@@ -133,13 +133,13 @@ function initCarousel(i){
       // Set Title for row
       //TODO: change location/id of where to store Title of row to be outside of htmlID for carousel items so 
       // they are not erased when carousel is built
-      $("#row-"+i).html("<h2>"+initURLs[i-1].title+"</h2");
+      //$("#row-"+i).html("<h2>"+initURLs[i-1].title+"</h2");
 
       // run constructor to add TV category carousel to HTML
       renderCarousel(response.results, "row-"+i);
 
       // Add next carousel topic
-      carousel();
+      carousel(i);
       initCarousel(i);
       
     }); 
@@ -150,7 +150,7 @@ function initCarousel(i){
 // Function that takes in the API response and id tag of HTML element to update
 function renderCarousel(results, htmlID){
   console.log("renderCarousel on div ID " +htmlID);
-  $("#" + htmlID).empty();
+
   // Looping over every result item and updating html
   for (let i = 0; i < results.length; i++) {
     let name = results[i].name;
@@ -170,7 +170,8 @@ function renderCarousel(results, htmlID){
         "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div></div></div>"
 
         $("#" + htmlID).append(html);
-    }else{
+    }
+    else{
       let html = "<div class='item' dataID=" + id +
       "><div class='w3-container col-lg-4 col-xs-4 col-md-4 col-sm-4'><div class='row' id='box-search'>" +
       "<div class='thumbnail text-center'><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
@@ -280,14 +281,18 @@ function queryShow(showID){
   }); 
 }
 
-function carousel(){
+function carousel(i){
+  console.log('calling carousel')
   var intervalTime = 4000;
-  $('#myCarousel0').carousel({
+  $('#myCarousel'+i).carousel({
     interval: intervalTime
   });
-
-  $('.carousel .item').each(function(){
+  var id = "#myCarousel" + i + " .item"
+  console.log(id)
+  // $("#myCarousel0 .item").each(function(){
+ $(id).each(function(item){
     var next = $(this).next();
+    console.log('items in',i,next)
     if (!next.length) {
       next = $(this).siblings(':first');
     }
@@ -300,6 +305,24 @@ function carousel(){
     else {
         $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
        
-  }
-});
+    }
+  })
 }
+
+//   $('.carousel .item').each(function(){
+//     var next = $(this).next();
+//     if (!next.length) {
+//       next = $(this).siblings(':first');
+//     }
+//     next.children(':first-child').clone().appendTo($(this));
+//     if (next.next().length>0) {
+   
+//         next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
+        
+//     }
+//     else {
+//         $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+       
+//   }
+//   });
+// }
