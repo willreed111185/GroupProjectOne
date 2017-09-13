@@ -147,42 +147,87 @@ function initCarousel(i){
 
 };
 
+var counter = 1;
+var innerCounter = 1;
+
 // Function that takes in the API response and id tag of HTML element to update
 function renderCarousel(results, htmlID){
   console.log("renderCarousel on div ID " +htmlID);
 
   // Looping over every result item and updating html
-  for (let i = 0; i < results.length; i++) {
-    let name = results[i].name;
-    let id = results[i].id;
+  for (let j = 0; j < results.length; j++) {
+    let name = results[j].name;
+    let data_ID = results[j].id;
     let thumbnail;
-    if(results[i].poster_path == null){
+    if(results[j].poster_path == null){
       thumbnail = "http://via.placeholder.com/185x278"
     }
     else{
-      thumbnail = imgBaseUrl + results[i].poster_path;
+      thumbnail = imgBaseUrl + results[j].poster_path;
     }
+    console.log("innerCounter: ",innerCounter);
+    console.log("Counter: ",counter);
     // Create HTML carousel from variables
-    if(i == 0){
-      let html = "<div class='item active' dataID=" + id +
-        "><div class='w3-container col-lg-4 col-xs-4 col-md-4 col-sm-4'><div class='row' id='box-search'>" +
-        "<div class='thumbnail text-center'><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
-        "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div></div></div>"
-
-        $("#" + htmlID).append(html);
+    if(j<4){
+      // console.log("item-j: ", j);
+      // console.log("row-i: ", htmlID);
+      // console.log("rowFactor: ", rowFactor);
+      let html = "<div class='col-sm-3'>" +
+      "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
+      "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
+      $(".row"+counter).append(html)
+      console.log(counter);
     }
-    else{
-      let html = "<div class='item' dataID=" + id +
-      "><div class='w3-container col-lg-4 col-xs-4 col-md-4 col-sm-4'><div class='row' id='box-search'>" +
-      "<div class='thumbnail text-center'><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
-      "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div></div></div>"
+    else if(j<8){
+      // console.log("item-j: ", j);
+      // console.log("row-i: ", htmlID);
+      // console.log("rowFactor: ", rowFactor);
+      let html = "<div class='col-sm-3'>" +
+      "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
+      "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
+      $(".row"+counter).append(html)
+      console.log(counter);
 
-      $("#" + htmlID).append(html);
     }
-    // Update HTML
+    else if(j<12){
+      // console.log("item-j: ", j);
+      // console.log("row-i: ", htmlID);
+      // console.log("rowFactor: ", rowFactor);
+      let html = "<div class='col-sm-3'>" +
+      "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
+      "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
+      $(".row"+counter).append(html)
+      console.log(counter);
+
+    }
+    else if(j<16){
+      // console.log("item-j: ", j);
+      // console.log("row-i: ", htmlID);
+      // console.log("rowFactor: ", rowFactor);
+      let html = "<div class='col-sm-3'>" +
+      "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
+      "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
+      $(".row"+counter).append(html)
+      console.log(counter);
+
+    }
+    else if (j<20){
+      // console.log("item-j: ", j);
+      // console.log("row-i: ", htmlID);
+      // console.log("rowFactor: ", rowFactor);
+      let html = "<div class='col-sm-3'>" +
+      "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
+      "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
+      $(".row"+counter).append(html)
+      console.log(counter);
+    }
     
+    innerCounter++;
+    if (innerCounter==5){
+      counter++;
+      innerCounter=1;
+    }    
   }
-
 }
 
 // Event handler when selecting a genre from the nav-bar
@@ -216,10 +261,10 @@ function queryGenre(query){
 
 
 // Event handler when user clicks on an item in the carousel
-$(document).on("click", ".item", function(){
-  console.log("TV Show ID: " + $(this).attr("dataID"));
+$(document).on("click", ".thumbnail", function(){
+  console.log("TV Show ID: " + $(this).attr("dataid"));
   // Call function to query API for the specific show
-  queryShow($(this).attr("dataID"));
+  queryShow($(this).attr("dataid"));
 })
 
 // Get individual show details to update modal
@@ -281,48 +326,86 @@ function queryShow(showID){
   }); 
 }
 
-function carousel(i){
-  console.log('calling carousel')
-  var intervalTime = 4000;
-  $('#myCarousel'+i).carousel({
-    interval: intervalTime
-  });
-  var id = "#myCarousel" + i + " .item"
-  console.log(id)
-  // $("#myCarousel0 .item").each(function(){
- $(id).each(function(item){
-    var next = $(this).next();
-    console.log('items in',i,next)
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    if (next.next().length>0) {
-   
-        next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
-        
-    }
-    else {
-        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-       
-    }
-  })
-}
 
-//   $('.carousel .item').each(function(){
-//     var next = $(this).next();
-//     if (!next.length) {
-//       next = $(this).siblings(':first');
-//     }
-//     next.children(':first-child').clone().appendTo($(this));
-//     if (next.next().length>0) {
+function carousel(i){
+  $('#myCarousel1').carousel({
+  interval: 10000
+  })
+    
+    $('#myCarousel1').on('slid.bs.carousel', function() {
+      //alert("slid");
+  });
+    $('#myCarousel2').on('slid.bs.carousel', function() {
+      //alert("slid");
+  });
+    
+};
+
+// Event handler when user clicks on an item in the carousel
+$(document).on("click", ".item", function(){
+  console.log("TV Show ID: " + $(this).attr("dataID"));
+  // Call function to query API for the specific show
+  queryShow($(this).attr("dataID"));
+})
+// Get individual show details to update modal
+function queryShow(showID){
+  console.log("queryShow");
+  // Performing GET requests to the the movie database API
+  $.ajax({
+    url: API_ROOT_URL + "tv/" + showID + "?api_key=" + API_KEY + "&language=en-US",
+    method: "GET"
+  }).done(function(response) {
    
-//         next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
-        
-//     }
-//     else {
-//         $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-       
-//   }
-//   });
-// }
+    console.log(response);
+    // Set values from API values into local TVShow Object
+    selectedTVShow.firstAired = response.first_air_date;
+    selectedTVShow.numSeasons = response.number_of_seasons;
+    selectedTVShow.numEpisodes = response.number_of_episodes;
+    selectedTVShow.synopsis = response.overview;
+    selectedTVShow.status = response.status; // Tell if show is still airing or if ended
+    if(response.poster_path == null){
+      selectedTVShow.poster = "http://via.placeholder.com/185x278"
+    }
+    else{
+      selectedTVShow.poster = imgBaseUrl + response.poster_path;      
+    }
+    $("#ShowTitle").html(response.name);
+    $("#time").html(response.last_air_date);
+    $("#plot").html(response.overview);
+    if(response.networks.length>0){
+      $("#network").html(response.networks[0].name);
+    }else{
+      $("#network").html(" ");
+    }
+    $("#modImage").attr("src", "http://image.tmdb.org/t/p/w185"+response.poster_path);
+    $("#id01").css("display","block");
+    console.log("posterpath: ",response.poster_path)
+    // Call API to find similar TV shows      
+    $.ajax({
+    url: API_ROOT_URL + "tv/" + showID + "/similar?api_key=" + API_KEY + "&language=en-US",
+    method: "GET"
+    }).done(function(simResponse) {
+      var results = simResponse.results;
+      // Loop through similar array and choose 2 similar shows to recommend
+      for(var i = 1; i < 3; i++){
+        let name = results[i].name;
+        let id = results[i].id;
+        let img;
+        if(response.poster_path == null){
+          img = "http://via.placeholder.com/185x278"
+        }
+        else{
+          img = imgBaseUrl + results[i-1].poster_path;      
+        }
+        // TODO: Build the html element for displaying the recommended show.
+        let html;
+        if(i == 1){
+          selectedTVShow.recommendation1 = html;
+        }
+        else{
+          selectedTVShow.recommendation2 = html;
+        }
+      }
+    });
+  }); 
+}
