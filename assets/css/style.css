@@ -1,42 +1,48 @@
+
+body {
+  background-color: #545151;
+}
+.navbar-inverse .navbar-brand, h2{
+    color: white;
+    font-family: 'Passion One', cursive;
+    font-size: 40px;
+}
+.well {
+  height: 375px;
+  opacity: .95;
+}
 .carousel-control {
   padding-top:10%;
-  width:5%;
+  width:10%;
 }
 
-/*#titleCaption {
-	color: white;
+.left .right {
+  height: 100%;
 }
 
-#item {
-	background-color: black;
-}*/
-
-/*.carousel-inner .active.left { left: -33%; }
-.carousel-inner .next        { left:  33%; }
-.carousel-inner .prev        { left: -33%; }
-.carousel-control.left,.carousel-control.right {background-image:none;}
-.item:not(.prev) {visibility: visible;}
-.item.right:not(.prev) {visibility: hidden;}
-.rightest{ visibility: visible;}*/
-
-/*@media (min-width: 768px) and (max-width: 991px) {
-      #myCarousel .carousel-inner .item .item-item:last-child {
-        display: none;
-      }
-   }
-@media (max-width: 768px) {
-     #mymyCarousel .carousel-inner {
-      height: 320px;
-    }
- }
-.carousel-inner {
-  overflow-y: hidden;
+.thumbnail {
+  background-color: black;
+  height: 325px;
 }
-.carousel-inner .active.left { left: -25%; }
-.carousel-inner .next        { left:  25%; }
-.carousel-inner .prev    { left: -25%; }
-.carousel-control        { width:  4%; }
-.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
-.carousel-inner .item-item {
-  padding:0!important;
-}*/
+
+#titleCaption {
+  color: white;
+  font-size: 20px;
+  font-family: 'Passion One', cursive;
+}
+
+/*Modal*/
+
+.w3-modal {
+  z-index: 0;
+}
+
+#network {
+  float: left;
+}
+
+#mute {
+  float: right;
+  font-size: 10px;
+}
+
