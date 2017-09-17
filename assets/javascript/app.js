@@ -84,6 +84,18 @@ let tvGenres = [
   }
 ];
 
+//generates buttons for genre dropdown menu
+function genreButtons(){
+let genreLen = tvGenres.length;
+  for (var k =0; k<genreLen; k++){
+    //console.log(tvGenres[k].name);
+    let innerGenre = $("<a>").attr("href","#").html(tvGenres[k].name);
+    let newGenre = $("<li>").addClass("genre-button").attr("id",tvGenres[k].id).attr("dataName",tvGenres[k].name).append(innerGenre);
+    $("#genreMenu").append(newGenre);
+  }
+}
+genreButtons();
+
 // stores the base url for images
 let imgBaseUrl;
 
@@ -165,8 +177,8 @@ function renderCarousel(results, htmlID){
     else{
       thumbnail = imgBaseUrl + results[j].poster_path;
     }
-    console.log("innerCounter: ",innerCounter);
-    console.log("Counter: ",counter);
+    // console.log("innerCounter: ",innerCounter);
+    // console.log("Counter: ",counter);
     // Create HTML carousel from variables
     if(j<4){
       // console.log("item-j: ", j);
@@ -176,7 +188,7 @@ function renderCarousel(results, htmlID){
       "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
       "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
       $(".row"+counter).append(html)
-      console.log(counter);
+      // console.log(counter);
     }
     else if(j<8){
       // console.log("item-j: ", j);
@@ -186,7 +198,7 @@ function renderCarousel(results, htmlID){
       "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
       "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
       $(".row"+counter).append(html)
-      console.log(counter);
+      // console.log(counter);
 
     }
     else if(j<12){
@@ -197,7 +209,7 @@ function renderCarousel(results, htmlID){
       "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
       "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
       $(".row"+counter).append(html)
-      console.log(counter);
+      // console.log(counter);
 
     }
     else if(j<16){
@@ -208,7 +220,7 @@ function renderCarousel(results, htmlID){
       "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
       "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
       $(".row"+counter).append(html)
-      console.log(counter);
+      // console.log(counter);
 
     }
     else if (j<20){
@@ -219,7 +231,7 @@ function renderCarousel(results, htmlID){
       "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
       "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
       $(".row"+counter).append(html)
-      console.log(counter);
+      // console.log(counter);
     }
     
     innerCounter++;
@@ -233,29 +245,61 @@ function renderCarousel(results, htmlID){
 // Event handler when selecting a genre from the nav-bar
 $(".genre-button").on("click", function(){
   // Set genre code
-  let genreID = $(this).val();
+  let genreID = $(this).attr("id");
+  let nameGenre = $(this).attr("dataName");
   console.log("genreID = "+genreID);
+  console.log("genreName = "+nameGenre);
 
   // TODO: set Title Header of carousel to Genre on HTML
-
+  $("#topRowHeadline").html(nameGenre).css("color", "white").css("font-size","40px").css("font-family","'Passion One', cursive");
+  for(var w=1; w<6; w++){
+    $(".row"+w).empty();
+  }
+  $(".row1").empty();
   // Set query details for API
-  let query = "&language=en-US&sort_by=popularity.desc&timezone=America%2FNew_York&include_null_first_air_dates=false&with_genres="+genreID;
-  queryAPI(query);
+  let query = "https://api.themoviedb.org/3/discover/tv?with_genres="+genreID+"&api_key="+API_KEY+"&language=en-US&page=1";
+    queryGenre(query);
 })
-
-// Get info from API based on query and load those values to row-0 in HTML
+  
+  // Get info from API based on query and load those values to row-0 in HTML"
 function queryGenre(query){
   // Performing GET requests to the the movie database API
     $.ajax({
-      url: API_ROOT_URL + query + API_KEY + "&language=en-US",
+      url: query,
       method: "GET"
     }).done(function(response) {
-     console.log("queryAPI");
+     // console.log("queryAPI");
       console.log(response);
-      // Set variable from API values
-
-      // Update HTML carousel
-      renderCarousel(response.results, "row-0");
+      let rowCounter=0
+      for (let i = 0; i < response.results.length; i++) {
+        let name = response.results[i].name;
+        let data_ID = response.results[i].id;
+        let thumbnail;
+        if(response.results[i].poster_path == null){
+          thumbnail = "http://via.placeholder.com/185x278"
+        }
+        else{
+          thumbnail = imgBaseUrl + response.results[i].poster_path;
+        }
+        let newHtml = "<div class='col-sm-3'>" +
+          "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
+          "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
+        if (i < 4) {          
+          $(".row1").append(newHtml)
+        } 
+        else if (i >= 4 && i < 8) {          
+          $(".row2").append(newHtml)
+        }
+        else if (i >= 8 && i < 12) {          
+          $(".row3").append(newHtml)
+        } 
+        else if (i >= 12 && i < 16) {          
+          $(".row4").append(newHtml)
+        } 
+        else if (i >= 16 && i < 20) {          
+          $(".row5").append(newHtml)
+        }
+      }
     });
 }
 
@@ -341,9 +385,16 @@ function carousel(i){
     
 };
 
+$(document).on("click","#modalMain", function(){
+  $(".modalBackdrop").css("opacity", "1");
+  $("#modalBox").css("display", "none");
+})
+
 // Event handler when user clicks on an item in the carousel
 $(document).on("click", ".item", function(){
   console.log("TV Show ID: " + $(this).attr("dataID"));
+    $(".modalBackdrop").css("opacity", ".1");
+
   // Call function to query API for the specific show
   queryShow($(this).attr("dataID"));
 })
@@ -378,7 +429,7 @@ function queryShow(showID){
       $("#network").html(" ");
     }
     $("#modImage").attr("src", "http://image.tmdb.org/t/p/w185"+response.poster_path);
-    $("#id01").css("display","block");
+    $("#modalBox").css("display","block");
     console.log("posterpath: ",response.poster_path)
     // Call API to find similar TV shows      
     $.ajax({

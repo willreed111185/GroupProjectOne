@@ -19,199 +19,190 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">SHOW ME</a>
+    <div class="modalBackdrop">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" id="brand">SHOW ME SHOWS</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Genre <span class="caret"></span></a>
+                  <ul class="dropdown-menu" id="genreMenu">
+                  </ul>
+                </li>
+              </ul>
+              <!-- <form class="navbar-form navbar-right">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form> -->
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
-<div class="container">
+    <div class="container">
+        <div class="modalBackdrop">
+            <div class="row headline" id="topRowHeadline"><h2>New Releases</h2></div>
+            <div class="well">
+                <div class="col-md-12" id="carouselContainer">
+                    <div class="carousel slide" id="myCarousel0">
 
-    <div class="row headline"><h2>New Releases</h2></div>
-    <div class="well">
-        <div class="col-md-12">
-            <div class="carousel slide" id="myCarousel0">
+                     <!-- Carousel items -->
+                     <div id="row-1" class="carousel-inner">
+                     	<div class="item active">
+                     		<div class="row1 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row2 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row3 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row4 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row5 row">
+                     		</div>
+                     	</div>
+                     </div>
+                     <a class="left carousel-control" href="#myCarousel0" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                     <a class="right carousel-control" href="#myCarousel0" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
 
-             <!-- Carousel items -->
-             <div id="row-1" class="carousel-inner">
-             	<div class="item active">
-             		<div class="row1 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row2 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row3 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row4 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row5 row">
-             		</div>
-             	</div>
-             </div>
-             <a class="left carousel-control" href="#myCarousel0" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-             <a class="right carousel-control" href="#myCarousel0" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            <div class="row headline" id="secondHeadline"><h2>Top Rated</h2></div>
+            <div class="well">
+                <div class="col-md-12" id="carouselContainer">
+                    <div class="carousel slide" id="myCarousel1">
+                      <div id="row-2" class="carousel-inner">
+                     	<div class="item active">
+                     		<div class="row6 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row7 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row8 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row9 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row10 row">
+                     		</div>
+                     	</div>
+                     </div>
+                      <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                      <a class="right carousel-control" href="#myCarousel1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row headline"><h2>Airing Today</h2></div>
+            <div class="well">
+                <div class="col-md-12" id="carouselContainer">
+                    <div class="carousel slide" id="myCarousel2">
+                      <div id="row-3" class="carousel-inner">
+                     	<div class="item active">
+                     		<div class="row11 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row12 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row13 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row14 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row15 row">
+                     		</div>
+                     	</div>
+                     </div>
+                      <a class="left carousel-control" href="#myCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                      <a class="right carousel-control" href="#myCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row headline"><h2>On The Air</h2></div>
+            <div class="well">
+                <div class="col-md-12" id="carouselContainer">
+                    <div class="carousel slide" id="myCarousel3">
+                      <div id="row-2" class="carousel-inner">
+                     	<div class="item active">
+                     		<div class="row16 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row17 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row18 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row19 row">
+                     		</div>
+                     	</div>
+                     	<div class="item">
+                     		<div class="row20 row">
+                     		</div>
+                     	</div>
+                     </div>
+                      <a class="left carousel-control" href="#myCarousel3" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                      <a class="right carousel-control" href="#myCarousel3" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row headline"><h2>Top Rated</h2></div>
-    <div class="well">
-            <div class="carousel slide" id="myCarousel1">
-              <div id="row-2" class="carousel-inner">
-             	<div class="item active">
-             		<div class="row6 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row7 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row8 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row9 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row10 row">
-             		</div>
-             	</div>
-             </div>
-              <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-              <a class="right carousel-control" href="#myCarousel1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>
-    </div>
-
-    <div class="row headline"><h2>Airing Today</h2></div>
-    <div class="well">
-        <!-- <div class="col-md-12"> -->
-            <div class="carousel slide" id="myCarousel2">
-              <div id="row-3" class="carousel-inner">
-             	<div class="item active">
-             		<div class="row11 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row12 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row13 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row14 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row15 row">
-             		</div>
-             	</div>
-             </div>
-              <a class="left carousel-control" href="#myCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-              <a class="right carousel-control" href="#myCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>
-       <!--  </div> -->
-    </div>
-
-    <div class="row headline"><h2>On The Air</h2></div>
-    <div class="well">
-        <div class="col-md-12">
-            <div class="carousel slide" id="myCarousel3">
-              <div id="row-2" class="carousel-inner">
-             	<div class="item active">
-             		<div class="row16 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row17 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row18 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row19 row">
-             		</div>
-             	</div>
-             	<div class="item">
-             		<div class="row20 row">
-             		</div>
-             	</div>
-             </div>
-              <a class="left carousel-control" href="#myCarousel3" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-              <a class="right carousel-control" href="#myCarousel3" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+        <div id="modalBox" class="w3-modal">
+            <div class="w3-modal-content w3-animate-opacity">
+                <div id=modalMain>
+                    <header class="w3-container w3-black">
+                      <div class="text-center"><img id="modImage"></div>
+                    </header>
+                    <div class="w3-container" id="modalTextBox">
+                      <p id="time"></p>
+                      <p id="plot"></p>
+                    </div>
+                </div>
+                <footer class="w3-container w3-black">
+                  <h2 id="footer"><span id="network"></span>   
+                  <span id="mute">[click to mute]</span></h2>
+                </footer>
             </div>
         </div>
-    </div>
-
-    <div id="id01" class="w3-modal">
-        <div class="w3-modal-content w3-animate-opacity">
-            <header class="w3-container w3-black">
-              <span id = "modal" onclick="document.getElementById('id01').style.display='none'"
-              class="w3-button w3-display-topright">&times;</span>
-              <h2 id="ShowTitle">Breaking Bad</h2>
-              <div class="text-center"><img id="modImage"></div>
-            </header>
-            <div class="w3-container">
-              <p id="time">9/15/2017 9:00pm</p>
-              <p id="plot">A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.</p>
-            </div>
-            <footer class="w3-container w3-black">
-              <h2 id="footer"><span id="network">AMC</span>   
-              <span id="mute">[click to mute]</span></h2>
-            </footer>
-            <div>Because you liked this:<br>
-                <div><img id="recom_1"><img id="recom_2"></div>
-            </div>
-        </div>
-    </div>
-</div>   
+    </div>   
     <script src="assets/javascript/app.js"></script>
- 
 </body>
 </html>

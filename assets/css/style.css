@@ -1,15 +1,20 @@
 
 body {
-  background-color: #545151;
+/*  background-color: #545151;
+*/  background-color: black;
 }
 .navbar-inverse .navbar-brand, h2{
     color: white;
     font-family: 'Passion One', cursive;
     font-size: 40px;
 }
+
 .well {
   height: 375px;
   opacity: .95;
+  background-color: black;
+  background-image:none;
+  border:none;
 }
 .carousel-control {
   padding-top:10%;
@@ -46,3 +51,28 @@ body {
   font-size: 10px;
 }
 
+#modalTextBox{
+  background-color: black;
+  color:white;
+}
+#ShowTitle, #brand{
+  color:red;
+}
+
+
+.Carousel{
+  background-color: black;
+  border:none;
+}
+#carouselContainer{
+  background-color: black;
+}
+
+.thumbnail{
+  background-color: black;
+  border:none;
+}
+
+.modal-backdrop.in{
+    opacity:0.0 !important;
+}
