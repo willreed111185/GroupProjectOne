@@ -159,8 +159,8 @@ function initCarousel(i){
 
 };
 
-var counter = 1;
-var innerCounter = 1;
+let counter = 1;
+let innerCounter = 1;
 
 // Function that takes in the API response and id tag of HTML element to update
 function renderCarousel(results, htmlID){
@@ -310,65 +310,6 @@ $(document).on("click", ".thumbnail", function(){
   // Call function to query API for the specific show
   queryShow($(this).attr("dataid"));
 })
-
-// Get individual show details to update modal
-function queryShow(showID){
-  console.log("queryShow");
-  // Performing GET requests to the the movie database API
-  $.ajax({
-    url: API_ROOT_URL + "tv/" + showID + "?api_key=" + API_KEY + "&language=en-US",
-    method: "GET"
-  }).done(function(response) {
-   
-    console.log(response);
-    // Set values from API values into local TVShow Object
-    selectedTVShow.firstAired = response.first_air_date;
-    selectedTVShow.numSeasons = response.number_of_seasons;
-    selectedTVShow.numEpisodes = response.number_of_episodes;
-    selectedTVShow.synopsis = response.overview;
-    selectedTVShow.status = response.status; // Tell if show is still airing or if ended
-
-    if(response.poster_path == null){
-      selectedTVShow.poster = "http://via.placeholder.com/185x278"
-    }
-    else{
-      selectedTVShow.poster = imgBaseUrl + response.poster_path;      
-    }
-    
-    // Call API to find similar TV shows      
-    $.ajax({
-    url: API_ROOT_URL + "tv/" + showID + "/similar?api_key=" + API_KEY + "&language=en-US",
-    method: "GET"
-    }).done(function(simResponse) {
-
-      var results = simResponse.results;
-
-      // Loop through similar array and choose 2 similar shows to recommend
-      for(var i = 1; i < 3; i++){
-
-        let name = results[i].name;
-        let id = results[i].id;
-        let img;
-        if(response.poster_path == null){
-          img = "http://via.placeholder.com/185x278"
-        }
-        else{
-          img = imgBaseUrl + results[i-1].poster_path;      
-        }
-
-        // TODO: Build the html element for displaying the recommended show.
-        let html;
-
-        if(i == 1){
-          selectedTVShow.recommendation1 = html;
-        }
-        else{
-          selectedTVShow.recommendation2 = html;
-        }
-      }
-    });
-  }); 
-}
 
 
 function carousel(i){
