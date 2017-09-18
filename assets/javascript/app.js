@@ -341,22 +341,13 @@ function queryShow(showID){
           thumbnail = "http://via.placeholder.com/185x278"
         }
         else{
-          thumbnail = imgBaseUrl + results[i-1].poster_path;      
+          thumbnail = imgBaseUrl + results[i].poster_path;      
         }
-        // TODO: Build the html element for displaying the recommended show.
-        let html;
-        if(i == 1){
-          selectedTVShow.recommendation1 = html;
-        }
-        else{
-          selectedTVShow.recommendation2 = html;
-        }
-
-        //todo : add recommended thumbs to modul
-        let nextUp = "<div class='col-sm-3'>" +
+        // Build the html element for displaying the recommended show.
+        let newhtml = "<div class='col-sm-3'>" +
         "<div class='thumbnail text-center' dataid= "+data_ID+"><img src=" + thumbnail + " alt=" + name + " class='img-responsive' " +
         "><div class='caption'><p id='titleCaption'>" + name + "</p></div></div></div>";
-        $(".rowA").append(nextUp);
+        $(".rowA").append(newhtml);
       }
     });
   }); 
