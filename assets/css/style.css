@@ -55,11 +55,17 @@ body {
   background-color: black;
   color:white;
 }
+#simShows{
+  padding-top: 5%;
+  background-color: black;
+  color:white;
+}
+.rowA{
+  background-color:black;
+}
 #ShowTitle, #brand{
   color:red;
 }
-
-
 .Carousel{
   background-color: black;
   border:none;
