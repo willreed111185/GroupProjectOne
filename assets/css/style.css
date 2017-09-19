@@ -10,7 +10,7 @@ body {
 }
 
 .well {
-  height: 375px;
+  max-height: 375px;
   opacity: .95;
   background-color: black;
   background-image:none;
@@ -27,7 +27,7 @@ body {
 
 .thumbnail {
   background-color: black;
-  height: 325px;
+  max-height: 325px;
 }
 
 #titleCaption {
@@ -62,6 +62,7 @@ body {
 }
 .rowA{
   background-color:black;
+  margin-bottom: 5%;
 }
 #ShowTitle, #brand{
   color:red;
