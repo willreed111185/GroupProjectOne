@@ -9,6 +9,12 @@ body {
     font-size: 40px;
 }
 
+.form-control:focus {
+  border-color: #bdb21f;
+  border-width: 1.2px;
+  box-shadow: none; 
+  -webkit-box-shadow: none;
+}
 .well {
   max-height: 375px;
   opacity: .95;
@@ -23,6 +29,14 @@ body {
 
 .left .right {
   height: 100%;
+}
+
+.carousel-control.left {
+  left: -53px;
+}
+
+.carousel-control.right {
+  right: -53px;
 }
 
 .thumbnail {
@@ -83,3 +97,4 @@ body {
 .modal-backdrop.in{
     opacity:0.0 !important;
 }
+
