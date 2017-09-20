@@ -1,20 +1,14 @@
 
 body {
 /*  background-color: #545151;
-*/  background-color: black;
+*/  background-image: url(../images/blackdenim.png);
 }
-.navbar-inverse .navbar-brand, h2{
+.navbar-inverse .navbar-brand, h2, h3{
     color: white;
     font-family: 'Passion One', cursive;
     font-size: 40px;
 }
 
-.form-control:focus {
-  border-color: #bdb21f;
-  border-width: 1.2px;
-  box-shadow: none; 
-  -webkit-box-shadow: none;
-}
 .well {
   max-height: 375px;
   opacity: .95;
@@ -30,7 +24,6 @@ body {
 .left .right {
   height: 100%;
 }
-
 .carousel-control.left {
   left: -53px;
 }
@@ -78,8 +71,8 @@ body {
   background-color:black;
   margin-bottom: 5%;
 }
-#ShowTitle, #brand{
-  color:red;
+#ShowTitle, #brand, #network{
+  color:#bdb21f;
 }
 .Carousel{
   background-color: black;
@@ -98,3 +91,24 @@ body {
     opacity:0.0 !important;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #bdb21f;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+.btn-secondary {
+  color: black;
+}
+
+#btnGroup {
+  float: left;
+}
+
+.modalInfo{
+  font-size: 15px;
+  color: grey;
+}
