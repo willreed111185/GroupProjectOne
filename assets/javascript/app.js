@@ -354,6 +354,7 @@ $(document).on("click","#close", function(){
   $(".modalBackdrop").css("opacity", "1");
   $("#modalBox").css("display", "none");
   audioElement.pause();
+  audioElement = null;
 })
 
 // Event handler to pause playback of TTS
@@ -365,4 +366,30 @@ $(document).on("click", "#pause", function() {
 $(document).on("click", "#play", function() {
   console.log("clicked play");
   audioElement.play();
+})
+
+// Event handler for user search
+$("#submit-btn").on("click", function(event) {
+  event.preventDefault();
+  var showInput = $("#show-input").val().trim();
+  console.log(showInput);
+  $("#show-input").val("");
+
+  // Performing GET requests to the the movie database API
+  $.ajax({
+    url: API_ROOT_URL+"search/tv?api_key="+API_KEY+"&language=en-US&query="+showInput+"&page=1",
+    //API_ROOT_URL + "/search/tv?api_key=" + API_KEY + "&language=en-US&page=1&query=" + +showInput,
+    method: "GET"
+  }).done(function(response) {
+    if (response.results.length == 0){
+      // Alert user that could not find the show
+      $("#show-input").attr("style", "border-color: red; border-width: 1.5px");
+      $("#show-input").attr("placeholder", "Show not found");
+    }
+    else{
+      $("#show-input").removeAttr("style");
+      $("#show-input").attr("placeholder", "Search");
+      queryShow(response.results[0].id);
+    }
+  });
 })
