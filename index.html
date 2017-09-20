@@ -57,7 +57,7 @@
     <div class="container">
         <div class="modalBackdrop">
             <div class="row headline" id="topRowHeadline"><h2>New Releases</h2></div>
-            <div class="well">
+            <div>
                 <div class="col-md-12" id="carouselContainer">
                     <div class="carousel slide" id="myCarousel0">
 
@@ -91,7 +91,7 @@
             </div>
 
             <div class="row headline" id="secondHeadline"><h2>Top Rated</h2></div>
-            <div class="well">
+            <div>
                 <div class="col-md-12" id="carouselContainer">
                     <div class="carousel slide" id="myCarousel1">
                       <div id="row-2" class="carousel-inner">
@@ -123,7 +123,7 @@
             </div>
 
             <div class="row headline"><h2>Airing Today</h2></div>
-            <div class="well">
+            <div>
                 <div class="col-md-12" id="carouselContainer">
                     <div class="carousel slide" id="myCarousel2">
                       <div id="row-3" class="carousel-inner">
@@ -155,7 +155,7 @@
             </div>
 
             <div class="row headline"><h2>On The Air</h2></div>
-            <div class="well">
+            <di">
                 <div class="col-md-12" id="carouselContainer">
                     <div class="carousel slide" id="myCarousel3">
                       <div id="row-2" class="carousel-inner">
@@ -187,31 +187,36 @@
             </div>
         </div>
 
-        <div id="modalBox" class="w3-modal">
-            <div class="w3-modal-content w3-animate-opacity">
+        <div id="modalBox" class="w3-modal .fade">
+            <div class="w3-modal-content w3-animate-opacity modalBorder">
                 <div id=modalMain>
                     <header class="w3-container w3-black">
-                    <button id="close">X</button>
-                      <h2 class="text-center" id="ShowTitle"></h2>
+                    <button id="close" class="btn btn-secondary btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      <h2 class="text-center" id="ShowTitle"></h2><hr>
                       <div class="text-center"><img id="modImage"></div>
                     </header>
                     <div class="w3-container" id="modalTextBox">
+                    <h5 class="modalInfo">Last Aired</h5>
                       <p id="time"></p>
-                      <button id="play">Play</button>
-                      <button id="pause">Pause</button>
+                      <h5 class="modalInfo">Plot</h5>
                       <p id="plot"></p>
+                      <span id="btnGroup">
+                    <button id="play" class="btn btn-secondary btn-xs"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+                    <button id="pause" class="btn btn-secondary btn-xs"><span class="glyphicon glyphicon-volume-off" aria-hidden="true"></span></button>
+                    </span>
                     </div>
                 </div>
                 <footer class="w3-container w3-black">
-                  <h2 id="footer"><span id="network"></span></h2>
+                <h5 class="modalInfo">Network</h5>
+                  <h2 id="footer"><span id="network"></span>
+                    </h2>
                   </footer>
                   <div id="simShows" class="w3-container w3-black text-center">
-                    Similar Shows
+                    <h2>Similar Shows</h2>
                   </div>
                   <div class="item">
                         <div class="rowA row">
-                        </div>
-                  </div>             
+                        </div>           
             </div>
         </div>
     </div>   
