@@ -9,7 +9,11 @@ body {
     font-size: 40px;
     text-shadow: 3px 3px rgba(5, 5, 5, 0.83)
 }
-
+.form-control:focus{
+  border-color: #bdb21f;  
+  box-shadow: none; 
+  -webkit-box-shadow: none;
+} 
 .well {
   max-height: 375px;
   opacity: .95;
@@ -46,6 +50,9 @@ body {
   text-shadow: 3px 3px rgba(5, 5, 5, 0.83);
 }
 
+.footer{
+  text-align: center;
+}
 /*Modal*/
 
 .w3-modal {
@@ -69,6 +76,7 @@ body {
   padding-top: 5%;
   background-color: #151212;
   color:white;
+  margin-bottom: 5%;
 }
 .rowA{
   background-color:#151212;
