@@ -7,6 +7,7 @@ body {
     color: white;
     font-family: 'Passion One', cursive;
     font-size: 40px;
+    text-shadow: 3px 3px rgba(5, 5, 5, 0.83)
 }
 
 .well {
@@ -16,6 +17,7 @@ body {
   background-image:none;
   border:none;
 }
+
 .carousel-control {
   padding-top:10%;
   width:10%;
@@ -33,7 +35,7 @@ body {
 }
 
 .thumbnail {
-  background-color: black;
+  background-color: none;
   max-height: 325px;
 }
 
@@ -41,6 +43,7 @@ body {
   color: white;
   font-size: 20px;
   font-family: 'Passion One', cursive;
+  text-shadow: 3px 3px rgba(5, 5, 5, 0.83);
 }
 
 /*Modal*/
@@ -59,16 +62,16 @@ body {
 }
 
 #modalTextBox{
-  background-color: black;
+  background-color: #151212;
   color:white;
 }
 #simShows{
   padding-top: 5%;
-  background-color: black;
+  background-color: #151212;
   color:white;
 }
 .rowA{
-  background-color:black;
+  background-color:#151212;
   margin-bottom: 5%;
 }
 #ShowTitle, #brand, #network{
@@ -79,16 +82,26 @@ body {
   border:none;
 }
 #carouselContainer{
-  background-color: black;
+  background-color: rgba(255,0,255, 0);
 }
 
 .thumbnail{
-  background-color: black;
+  background-color: rgba(0,0,0,0);
   border:none;
+}
+
+.img-responsive {
+  box-shadow: 5px 5px 3px rgba(5, 5, 5, 0.83);
 }
 
 .modal-backdrop.in{
     opacity:0.0 !important;
+}
+.w3-black {
+  background-color:#151212;
+}
+.w3-container {
+  background-color:#151212;
 }
 
 hr {
@@ -96,6 +109,7 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #bdb21f;
+    box-shadow: 5px 5px 3px rgba(5, 5, 5, 0.83);
     margin: 1em 0;
     padding: 0; 
 }
@@ -111,4 +125,8 @@ hr {
 .modalInfo{
   font-size: 15px;
   color: grey;
+}
+
+#modImage {
+  box-shadow: 5px 5px 3px rgba(5, 5, 5, 0.83)
 }
