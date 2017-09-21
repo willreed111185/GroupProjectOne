@@ -8,7 +8,11 @@ body {
     font-family: 'Passion One', cursive;
     font-size: 40px;
 }
-
+.form-control:focus{
+  border-color: #bdb21f;  
+  box-shadow: none; 
+  -webkit-box-shadow: none;
+} 
 .well {
   max-height: 375px;
   opacity: .95;
@@ -43,6 +47,9 @@ body {
   font-family: 'Passion One', cursive;
 }
 
+.footer{
+  text-align: center;
+}
 /*Modal*/
 
 .w3-modal {
@@ -66,10 +73,10 @@ body {
   padding-top: 5%;
   background-color: black;
   color:white;
+  margin-bottom: 5%;
 }
 .rowA{
   background-color:black;
-  margin-bottom: 5%;
 }
 #ShowTitle, #brand, #network{
   color:#bdb21f;
