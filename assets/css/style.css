@@ -9,6 +9,27 @@ body {
     font-size: 40px;
     text-shadow: 3px 3px rgba(5, 5, 5, 0.83)
 }
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 75px;
+    height: 75px;
+    padding-top: 0;
+}
+h1 {
+    font-family: 'Passion One', cursive;
+    font-size: 40px;
+    text-shadow: 3px 3px rgba(5, 5, 5, 0.83)
+}
+i {
+  color: white;
+}
+#showmy {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
 .form-control:focus{
   border-color: #bdb21f;  
   box-shadow: none; 
@@ -38,9 +59,9 @@ body {
   right: -53px;
 }
 
-.thumbnail {
-  background-color: none;
-  max-height: 325px;
+.img-thumbnail {
+  background-color: rgba(0,0,0,0);
+  border:none;
 }
 
 #titleCaption {
@@ -138,3 +159,4 @@ hr {
 #modImage {
   box-shadow: 5px 5px 3px rgba(5, 5, 5, 0.83)
 }
+
