@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/cbfe97f56e.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -32,7 +33,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#" id="brand">SHOW ME SHOWS</a>
+              <a class="navbar-brand" href="#" id="brand">
+                <h1 id="showme"><i class="fa fa-television" aria-hidden="true"></i>ShowMeShows </h1>
+              </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -43,16 +46,21 @@
                   </ul>
                 </li>
               </ul>
-              <form class="navbar-form navbar-right">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search" id="show-input">
-                </div>
-                <button type="submit" class="btn btn-default" id="submit-btn">Search</button>
-              </form>
+              <a class="navbar-brand pull-right" href="https://lit-retreat-72472.herokuapp.com/user/1" id="brand"> 
+                <h1 id="showmy"><i class="fa fa-television" aria-hidden="true"></i> ShowMyShows</h1>
+              </a>
+            </div>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
     </div>
+
+    <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" id="show-input">
+        </div>
+        <button type="submit" class="btn btn-default" id="submit-btn">Search</button>
+    </form>
 
     <div class="container">
         <div class="modalBackdrop">
